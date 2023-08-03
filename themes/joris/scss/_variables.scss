@@ -1,0 +1,47 @@
+:root {
+  /**
+   * Breakpoints
+   *
+   * Future TODO: calc() won’t work when applied to media queries.
+   * Future TODO: CSS variables won’t work when applied to media queries.
+   */
+  --breakpoint-sm: #{math.div(500, 16) + em};  // 500px
+  --breakpoint-md: #{math.div(700, 16) + em};  // 700px
+  --breakpoint-lg: #{math.div(1000, 16) + em}; // 1000px
+  --breakpoint-xl: #{math.div(1200, 16) + em}; // 1200px
+  --breakpoint-xxl: #{math.div(2000, 16) + em};// 2000px
+
+  /**
+   * Typo
+   *
+   */
+  --font-body: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;// 'Iowan Old Style', 'Iowan', 'Garamond', 'Palatino', 'Times New Roman', serif; // -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-body);
+
+  /**
+   * Color scheme
+   *
+   */
+  --color-base: #444444;
+  --color-focus: #ffff00;
+  --color-link: #0000ff;
+
+  --color-background-base: #ffffff;
+  --color-background-dark: #f7f7f7;
+
+  --color-shadow: rgba(100 100 100 / 30%);
+}
+
+@mixin color-scheme-dark {
+  --color-base: #e7e5e4;
+  --color-focus: #2b3236;
+  --color-link: var(--color-base);
+
+  --color-background-base: #1c1917;
+  --color-background-dark: #202020;
+
+  --color-shadow: rgba(0 0 0 / 30%);
+}
+
+$base-font-size: 18 !default;
+$base-line-height: 1.67 !default;

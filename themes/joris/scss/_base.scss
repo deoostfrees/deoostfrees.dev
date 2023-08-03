@@ -1,0 +1,29 @@
+:target {
+  scroll-margin-block-start: gap(2);
+}
+
+::selection {
+  background-color: var(--color-focus);
+  color: var(--color-base);
+}
+
+::target-text {
+  background-color: var(--color-focus);
+  color: var(--color-base);
+}
+
+html {
+  font-kerning: normal;
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--color-background-base);
+  color: var(--color-base);
+}

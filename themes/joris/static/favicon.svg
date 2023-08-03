@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none">
+  <style>
+    circle {
+      fill: #0000FF;
+    }
+
+    @media screen and (prefers-color-scheme: dark) {
+      circle {
+        fill: #E7E5E4;
+      }
+    }
+  </style>
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="12" r="11" />
+</svg>

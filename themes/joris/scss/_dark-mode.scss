@@ -1,0 +1,65 @@
+[data-theme='dunkel'] {
+  @include color-scheme-dark;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html:not([data-theme='hell']) {
+    @include color-scheme-dark;
+  }
+}
+
+dialog {
+  accent-color: var(--color-base);
+  background-color: var(--color-background-base);
+  border: rem(1) solid;
+  color: var(--color-base);
+  inset: 0;
+  margin: auto;
+  max-block-size: calc(100% - #{rem(40)});
+  max-inline-size: calc(100% - #{rem(40)});
+  overscroll-behavior: contain;
+
+  @media screen and (min-width: em(700, 16)) {
+    max-inline-size: rem(612);
+  }
+
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(#{rem(2)});
+  }
+
+  & form {
+    margin: rem(20);
+
+    & > * + * {
+      margin-block-start: gap(1);
+    }
+  }
+
+  & fieldset {
+    border: rem(1) solid;
+    padding: rem(8);
+
+
+    & > div > div + div {
+      margin-block-start: rem(8);
+    }
+  }
+
+  & label {
+    align-items: baseline;
+    display: flex;
+    gap: rem(8);
+  }
+
+  & input[type='radio'] {
+    min-width: rem(14);
+    min-height: rem(14);
+  }
+
+  & .buttons {
+    display: flex;
+    column-gap: 1rem;
+  }
+}

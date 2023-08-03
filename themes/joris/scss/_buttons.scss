@@ -1,0 +1,84 @@
+.btn {
+  appearance: none;
+  background-color: transparent;
+  background-image: none;
+  border: rem(1) solid transparent;
+  border-radius: rem(4);
+  color: var(--color-link);
+  display: inline-block;
+  font: inherit;
+  padding-block-start: rem(4);
+  padding-block-end: rem(4);
+  padding-inline-start: rem(4);
+  padding-inline-end: rem(4);
+  text-align: center;
+  text-decoration: none;
+
+
+  // Firefox: removes the inner border shown on focus
+
+  &::-moz-focus-inner {
+    border: none;
+  }
+
+  &--primary {
+    background-color: transparent;
+    border-color: var(--color-link);
+    color: var(--color-link);
+    padding-inline-end: rem(12);
+    padding-inline-start: rem(12);
+    text-decoration-skip-ink: auto;
+    text-decoration-skip: edges;
+    text-decoration-thickness: rem(1);
+    text-underline-offset: 0.2ex;
+
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: var(--color-link);
+      color: var(--color-background-base);
+    }
+  }
+
+  &--secondary {
+    background-color: inherit;
+    border-color: var(--color-link);
+    color: var(--color-link);
+    padding-inline-end: rem(12);
+    padding-inline-start: rem(12);
+    text-decoration-skip-ink: auto;
+    text-decoration-skip: edges;
+    text-decoration-thickness: rem(1);
+    text-underline-offset: 0.2ex;
+
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: var(--color-link);
+      color: var(--color-background-base);
+    }
+  }
+
+  &--tertiary {
+    background-color: inherit;
+    border-color: transparent;
+    color: var(--color-link);
+    padding-inline-end: rem(12);
+    padding-inline-start: rem(12);
+    text-decoration-line: underline;
+    text-decoration-skip-ink: auto;
+    text-decoration-skip: edges;
+    text-decoration-thickness: rem(1);
+    text-underline-offset: 0.2ex;
+
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: var(--color-link);
+      color: var(--color-background-base);
+    }
+  }
+}

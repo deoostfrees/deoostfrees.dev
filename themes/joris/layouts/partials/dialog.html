@@ -1,0 +1,52 @@
+<dialog id="theme-selector">
+  <form method="dialog">
+    <fieldset class="theme">
+      <legend><h2>Wähle ein Design</h2></legend>
+
+      <div>
+        <div>
+          <label>
+            <input type="radio" name="theme" value="system">
+
+            <span>
+              <strong>Systemeinstellung</strong>
+              <br>
+              <small>Diese Einstellung passt sich an die Präferenz an, die in den Systemeinstellungen gewählt ist. Es ändert das Erscheinungsbild der Website, wenn diese Einstellungen geändert wird.</small>
+            </span>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="radio" name="theme" value="hell">
+
+            <span class="pseudo-label">
+              <strong>Helles Design</strong>
+              <br>
+              <small>Helles Design unabhängig von den Systemeinstellung verwenden.</small>
+            </span>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="radio" name="theme" value="dunkel">
+
+            <span class="pseudo-label">
+              <strong>Dunkles Design</strong>
+              <br>
+              <small>Dunkles Design unabhängig von den Systemeinstellung verwenden.</small>
+            </span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <p>Die Einstellungen werden lokal gespeichert und niemals an den Server übertragen.</p>
+
+    <div class="buttons">
+      <button type="submit" class="btn btn--primary btn--dialog-save">Speichern</button>
+      <button type="submit" class="btn btn--tertiary btn--dialog-close">Schließen</button>
+    </div>
+  </form>
+</dialog>

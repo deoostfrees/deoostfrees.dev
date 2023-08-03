@@ -1,0 +1,45 @@
+{
+  "name": "Benjamin de Oostfrees",
+  "short_name": "de Oostfrees",
+  "description": "Frontend Webentwickler (Barrierefreiheit, HTML, CSS, JavaScript), Minimalist, AFOL (Adult fan of LEGO®).",
+  "start_url": "/",
+  "lang": "de",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "display": "standalone",
+  "orientation": "portrait",
+  "shortcuts": [
+    {
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Ways to get in touch with me",
+      "url": "/moin/#kontakt",
+      "icons": [
+        {
+          "src": "/icons/icon-contact.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

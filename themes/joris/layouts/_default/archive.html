@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{- partial "head" . -}}
+
+  <body class="archive">
+    <a class="btn skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    <div class="page">
+      {{- partial "nav" . -}}
+
+      <main id="inhalt" class="page__main">
+        <article class="article article--{{ .Type }}">
+          <header class="article__header">
+            <h1>{{ .Title | safeHTML }}</h1>
+          </header>
+        </article>
+
+        {{- $pages := where .Site.RegularPages "Type" "!=" "page" }}
+        <nav class="page__nav page__nav--article-list" aria-label="Artikel">
+          {{- range $pages.GroupByDate "2006" }}
+          {{- $year := .Key }}
+          <ol>
+            {{- range .GroupByDate "January" }}
+            <li>
+              <h3 aria-label="{{ $year }} {{ .Key }}">
+                <span class="year">{{ $year }}</span> <span class="month">{{ .Key }}</span>
+              </h3>
+
+              <ol class="monthlist">
+                {{- range .ByDate.Reverse }}
+                <li>
+                  <span>{{ .Date.Format "2"}}.</span>
+                  <span class="ellipses"></span>
+                  <span>
+                    <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+                  </span>
+                </li>
+                {{- end }}
+              </ol>
+            </li>
+            {{- end }}
+          </ol>
+          {{- end }}
+        </nav>
+      </main>
+
+      {{- partial "footer" . -}}
+    </div>
+
+    {{- partial "script" . -}}
+  </body>
+</html>

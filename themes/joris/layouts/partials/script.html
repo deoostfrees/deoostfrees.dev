@@ -1,0 +1,20 @@
+{{ $opts := dict "minify" true "format" "esm" }}
+{{ $js := resources.Get "js/main.js" | js.Build $opts | fingerprint "sha512" }}
+<script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Benjamin de Oostfrees",
+    "jobTitle": "Web developer",
+    "gender": "male",
+    "url": "https://deoostfrees.com",
+    "description": "{{ $.Site.Params.description }}",
+    "image": "{{ .Site.BaseURL }}/images/deoostfrees.jpg",
+    "sameAs": [
+      "https://twitter.com/deoostfrees",
+      "https://codepen.io/deoostfrees",
+      "https://github.com/deoostfrees"
+    ]
+  }
+</script>

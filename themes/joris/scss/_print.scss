@@ -1,0 +1,42 @@
+@media print {
+
+  @page {
+    margin-block-start: 2.7cm;
+    margin-inline-start: 2.5cm;
+    margin-inline-end: 2cm;
+    margin-block-end: 2cm;
+  }
+
+  * {
+    color: #000 !important;
+  }
+
+  a {
+    text-decoration: none !important;
+
+
+    &::after {
+      content: " ("attr(href)")" !important;
+    }
+  }
+
+  figure {
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+  }
+
+  .page {
+    padding-block-start: 0;
+    padding-block-end: 0;
+
+
+    &__main {
+      margin-block-start: 0;
+    }
+
+    &__nav,
+    &__footer {
+      display: none;
+    }
+  }
+}

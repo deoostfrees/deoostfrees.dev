@@ -1,0 +1,64 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{- if .IsHome }}
+  <title>{{ .Site.Title | safeHTML }}</title>
+  {{- else if eq .RelPermalink "/hire/" }}
+  <title>Hire {{ .Site.Title | safeHTML }}</title>
+  {{- else }}
+  <title>{{ .Title | safeHTML }} - {{ .Site.Title | safeHTML }}</title>
+  {{- end }}
+
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
+  {{- if .IsHome }}
+  <meta name="robots" content="index, follow">
+  {{- else }}
+    {{- if eq .Type "page" }}
+    <meta name="robots" content="noindex, nofollow">
+    {{- else if eq .Kind "taxonomy" }}
+    <meta name="robots" content="noindex, nofollow">
+    {{- else if eq .Kind "term" }}
+    <meta name="robots" content="noindex, nofollow">
+    {{- else }}
+    <meta name="robots" content="index, follow">
+    {{- end }}
+  {{- end }}
+
+  <link href="{{ .Site.BaseURL }}/favicon.svg" type="image/svg+xml" rel="icon">
+  <link href="{{ .Site.BaseURL }}/manifest.webmanifest" rel="manifest">
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1F2430" />
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="de Oostfrees">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="de Oostfrees">
+
+  <link rel="me" href="https://mstdn.social/@deoostfrees" />
+  <link href="{{ .Site.BaseURL }}/icons/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="{{if .IsHome }}{{ .Site.Title | safeHTML }}{{ else }}{{ .Title | safeHTML }} | {{ .Site.Title | safeHTML }}{{ end }}">
+  <meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+  <meta property="og:image" content="{{ .Site.BaseURL }}/images/share-image.png">
+  <meta property="og:image:alt" content="">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{- with .OutputFormats.Get "rss" }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{- end }}
+
+  {{ $opts := dict "minify" true }}
+  {{ $js := resources.Get "js/dark-mode.js" | js.Build $opts | fingerprint "sha512" }}
+  <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+
+  {{- $css := resources.Get "css/style.css" | minify | fingerprint "sha512" }}
+  <link href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" rel="stylesheet">
+</head>

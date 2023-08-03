@@ -1,0 +1,43 @@
+// Hide elements visually but not for screen reader
+
+%visually-hidden {
+  clip-path: inset(50%);
+  block-size: rem(1);
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  inline-size: rem(1);
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
+
+// Focus
+
+:focus-visible {
+  background-color: var(--color-link);
+  color: var(--color-background-base);
+  outline-color: var(--color-link);
+  outline-offset: rem(4);
+  outline-width: rem(2);
+  outline-style: solid;
+}
+
+// Skip to content link
+
+.skip-link {
+
+
+
+  &:focus {
+    inset-block-start: gap(1);
+    inset-inline-start: gap(1);
+    position: absolute;
+    z-index: 1337;
+  }
+
+  &:not(:focus) {
+    @extend %visually-hidden;
+  }
+}

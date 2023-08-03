@@ -1,0 +1,119 @@
+html {
+  font: normal normal 400 percent(16, 16)/$base-line-height var(--font-body);
+
+  @media screen and (min-width: em(700, 16)) {
+    font-size: percent($base-font-size, 16);
+  }
+
+  @media screen and (min-width: em(2000, 16)) {
+    font-size: percent(20, 16);
+  }
+}
+
+small {
+  font-size: em(16);
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+del,
+strike {
+  text-decoration: line-through;
+  text-decoration-thickness: rem(1);
+}
+
+ins {
+  text-decoration: none;
+}
+
+sub,
+sup {
+  font-size: em(16);
+  user-select: none;
+}
+
+sup {
+  vertical-align: super;
+}
+
+a {
+  box-decoration-break: clone;
+  border-radius: rem(4);
+  color: var(--color-link);
+  margin-inline: -#{rem(4)};
+  padding-inline: rem(4);
+  text-decoration-line: underline;
+  text-decoration-skip-ink: auto;
+  text-decoration-skip: edges;
+  text-decoration-thickness: rem(1);
+  text-underline-offset: 0.2ex;
+
+
+  &.heading-permalink {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    background-color: var(--color-link);
+    color: var(--color-background-base);
+  }
+}
+
+time {
+  font-size: em(16);
+}
+
+blockquote {
+
+
+
+  & p {
+    font-style: italic;
+    quotes: '\201C' '\201D';
+    text-indent: -.5rem;
+
+    @supports (hanging-punctuation: first) {
+      text-indent: 0;
+      hanging-punctuation: first;
+    }
+
+    &::before {
+      content: open-quote;
+    }
+
+    &::after {
+      content: close-quote;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font: normal normal 700 em(23)/1.68 var(--font-heading);
+}
+
+@media screen and (min-width: em(700, 16)) {
+
+  h2 {
+    font-size: em(29);
+    line-height: 1.55;
+  }
+}
+
+h1,
+.home .article h2 {
+  font-size: em(29);
+  line-height: 1.55;
+}

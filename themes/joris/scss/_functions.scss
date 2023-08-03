@@ -1,0 +1,18 @@
+@function gap($number) {
+  @return #{$number * $base-line-height + 'rem'};
+}
+
+// Converts pixel values into percent values
+@function percent($pixels, $base-font-size: $base-font-size) {
+  @return #{math.div(100, $base-font-size) * $pixels + '%'};
+}
+
+// Converts pixel values into em values
+@function em($pixels, $base-font-size: $base-font-size) {
+  @return #{math.div($pixels, $base-font-size) + 'em'};
+}
+
+// Converts pixel values into rem values
+@function rem($pixels, $base-font-size: $base-font-size) {
+  @return #{math.div($pixels, $base-font-size) + 'rem'};
+}

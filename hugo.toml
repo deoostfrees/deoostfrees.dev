@@ -1,0 +1,58 @@
+baseURL = "https://deoostfrees.com"
+DefaultContentLanguage = "de"
+disableHugoGeneratorInject = true
+disableKinds = ["robotsTXT", "section", "taxonomy", "term"]
+languageCode = "de"
+theme = "joris"
+title = "Benjamin de Oostfrees"
+rssLimit = 10
+
+[outputs]
+  home = [
+    "HTML",
+    "RSS"
+  ]
+  page = [
+    "HTML"
+  ]
+
+[permalinks]
+  book = "/:slug/"
+  image = "/:slug"
+  page = "/:slug/"
+  post = "/:slug/"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[params]
+  description = "Frontend Webentwickler (Barrierefreiheit, HTML, CSS, JavaScript), Minimalist, AFOL (Adult fan of LEGO®)."
+
+[menu]
+  [[menu.footer]]
+    name = "Moin"
+    url = "https://deoostfrees.com/moin/"
+    weight = -100
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = false
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+      wrapStandAloneImageWithinParagraph = false
+
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xHTML = false

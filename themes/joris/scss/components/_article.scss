@@ -1,0 +1,117 @@
+.article {
+
+
+
+  & > *:not(figure),
+  & figcaption {
+    max-inline-size: rem(612);
+    inline-size: 100%;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+  }
+
+  & > * + *:not(header) {
+    margin-block-start: gap(1);
+  }
+
+  & ul {
+
+
+
+    & li {
+
+
+
+      &::marker {
+        content: '\2013\00A0';
+      }
+
+      & + li {
+        margin-block-start: gap(0.5);
+      }
+    }
+
+    & + * {
+      margin-block-start: gap(1.5);
+    }
+  }
+
+  & header + * {
+    margin-block-start: gap(2);
+
+    @media screen and (min-width: em(700, 16)) {
+      margin-block-start: gap(2.5);
+    }
+  }
+
+  & figure {
+    margin-block-start: gap(2);
+
+    @media screen and (min-width: em(700, 16)) {
+      margin-block-start: gap(2.5);
+    }
+  }
+
+  & img {
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+  }
+
+  & figure + * {
+    margin-block-start: gap(2);
+
+    @media screen and (min-width: em(700, 16)) {
+      margin-block-start: gap(2.5);
+    }
+  }
+
+  & figcaption {
+    font-size: em(16);
+    padding-inline-start: rem(20);
+    padding-inline-end: rem(20);
+    text-align: center;
+  }
+
+  & * + figcaption {
+    margin-block-start: gap(0.5);
+
+    @media screen and (min-width: em(700, 16)) {
+      margin-block-start: gap(1);
+    }
+  }
+
+  & picture {
+    background-color: var(--color-background-dark);
+    display: block;
+    padding: gap(1);
+
+    @media screen and (min-width: em(700, 16)) {
+      padding: gap(2);
+    }
+
+
+    & img {
+      border-radius: rem(2);
+      box-shadow: 0 rem(15) rem(25) var(--color-shadow);
+      inline-size: auto;
+      max-block-size: 80svh;
+    }
+  }
+
+  & > * + h2,
+  & > * + h3 {
+    margin-block-start: gap(2);
+
+    @media screen and (min-width: em(1400, 16)) {
+      margin-block-start: gap(2.5);
+    }
+  }
+
+  & + & {
+    margin-block-start: gap(6);
+  }
+
+  &__rate {
+    display: flex;
+  }
+}

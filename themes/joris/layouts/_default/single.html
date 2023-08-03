@@ -1,0 +1,7 @@
+{{- define "main" }}
+  {{- partial "article" . -}}
+
+  {{- if not (eq .Type "page") }}
+    {{- partial "article-list" . }}
+  {{- end }}
+{{- end }}

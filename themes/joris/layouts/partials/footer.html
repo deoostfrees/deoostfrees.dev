@@ -1,0 +1,22 @@
+<footer class="page__footer">
+  {{- $currentPage := . }}
+
+  <nav class="page__nav page__nav--footer" aria-label="Footer">
+    <ul>
+      <li>
+        <button type="button" class="btn btn--primary btn--dialog-open" aria-disabled="true">Einstellungen</button>
+      </li>
+      {{- range .Site.Menus.footer }}
+      <li>
+        {{- if eq $currentPage.Permalink .URL }}
+        <a aria-current="page" href="{{ .URL }}" {{ with .Params.class }}class="{{ . }}"{{ end }}>{{ .Name }} {{ .Pre }}</a>
+        {{- else }}
+        <a href="{{ .URL }}" {{ with .Params.class }}class="{{ . }}"{{ end }}>{{ .Name }} {{ .Pre }}</a>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+  </nav>
+</footer>
+
+{{- partial "dialog" . -}}

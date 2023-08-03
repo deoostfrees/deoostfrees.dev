@@ -1,0 +1,48 @@
+html,
+body {
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+  max-inline-size: rem(1800);
+  min-height: 100%;
+  padding-block-end: gap(1.5);
+  padding-block-start: gap(1.5);
+  padding-inline-end: gap(1.5);
+  padding-inline-start: gap(1.5);
+
+
+  &__main {
+    flex-grow: 1;
+    inline-size: 100%;
+    margin-block-start: gap(4);
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+    max-inline-size: rem(1200);
+
+
+    body:not(.home) & {
+      margin-block-start: calc(#{gap(4)} - #{rem(40)});
+    }
+  }
+
+  &__nav,
+  &__footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    inline-size: 100%;
+  }
+
+  &__footer {
+    margin-block-start: gap(6);
+
+    @media screen and (min-width: em(700, 16)) {
+      margin-block-start: gap(7);
+    }
+  }
+}

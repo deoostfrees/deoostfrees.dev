@@ -1,0 +1,42 @@
+sitemap: https://deoostfrees.com/sitemap.xml
+
+#User-agent: Googlebot-Image
+#Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Yahoo-MMCrawler
+Disallow: /
+
+User-agent: msnbot
+Disallow: /*.jpg$
+Disallow: /*.gif$
+Disallow: /*.png$
+
+##Google AdSense
+User-agent: Mediapartners-Google*
+Disallow: /
+
+User-agent: duggmirror
+Disallow: /
+
+##Internet Archiver Wayback Machine
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: yacybot
+Disallow: /
+
+##cuil
+User-agent: Mozilla/5.0 (Twiceler-0.9 http://www.cuil.com/twiceler/robot.html)
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: *
+Allow: /
