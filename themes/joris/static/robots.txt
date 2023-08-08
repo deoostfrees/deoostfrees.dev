@@ -3,6 +3,9 @@ sitemap: https://deoostfrees.com/sitemap.xml
 #User-agent: Googlebot-Image
 #Disallow: /
 
+User-agent: GPTBot
+Disallow: /
+
 User-agent: CCBot
 Disallow: /
 
