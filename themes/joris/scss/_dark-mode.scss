@@ -54,8 +54,8 @@ dialog {
   }
 
   & input[type='radio'] {
-    min-width: rem(14);
-    min-height: rem(14);
+    min-inline-size: rem(14);
+    min-block-size: rem(14);
   }
 
   & .buttons {

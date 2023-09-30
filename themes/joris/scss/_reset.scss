@@ -10,7 +10,7 @@
 }
 
 html {
-  text-size-adjust: 100%;
+  text-size-adjust: none;
 }
 
 a,
@@ -19,14 +19,19 @@ button {
 }
 
 input,
+button,
 textarea,
-button {
-  font-size: inherit;
-  font-family: inherit;
+select {
+  font: inherit;
+}
+
+img,
+picture {
+  display: block;
+
 }
 
 img {
   block-size: auto;
-  display: block;
   max-inline-size: 100%;
 }

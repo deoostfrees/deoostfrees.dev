@@ -1,8 +1,3 @@
-html,
-body {
-  height: 100%;
-}
-
 .page {
   display: flex;
   flex-direction: column;
@@ -10,7 +5,7 @@ body {
   margin-inline-end: auto;
   margin-inline-start: auto;
   max-inline-size: rem(1800);
-  min-height: 100%;
+  min-block-size: 100svh;
   padding-block-end: gap(1.5);
   padding-block-start: gap(1.5);
   padding-inline-end: gap(1.5);
@@ -39,10 +34,18 @@ body {
   }
 
   &__footer {
-    margin-block-start: gap(6);
+    margin-block-start: gap(5);
 
     @media screen and (min-width: em(700, 16)) {
-      margin-block-start: gap(7);
+      margin-block-start: gap(6);
+    }
+
+    body:not(.archive) & {
+      margin-block-start: gap(6);
+
+      @media screen and (min-width: em(700, 16)) {
+        margin-block-start: gap(7);
+      }
     }
   }
 }
