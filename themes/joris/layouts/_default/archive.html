@@ -16,19 +16,26 @@
         </article>
 
         {{- $pages := where .Site.RegularPages "Type" "!=" "page" }}
+        {{- $.Scratch.Set "count" 1 }}
         <nav class="page__nav page__nav--article-list" aria-label="Artikel">
           {{- range $pages.GroupByDate "2006" }}
           {{- $year := .Key }}
           <ol>
             {{- range .GroupByDate "January" }}
             <li>
-              <h3 aria-label="{{ $year }} {{ .Key }}">
-                <span class="year">{{ $year }}</span> <span class="month">{{ .Key }}</span>
-              </h3>
+              <h2 class="headline" aria-label="{{ $year }} {{ .Key }}">
+                {{- if (eq ($.Scratch.Get "count") 1) }}
+                  {{- $.Scratch.Set "count" 0 }}
+                    <span class="year">{{ $year }}</span>
+                {{- end }}
+
+                {{- $.Scratch.Set "count" 1 }}
+                <span class="month">{{ .Key }}</span>
+              </h2>
 
               <ol class="monthlist">
                 {{- range .ByDate.Reverse }}
-                <li>
+                <li data-type="{{ .Type }}">
                   <span>{{ .Date.Format "2"}}.</span>
                   <span class="ellipses"></span>
                   <span>
@@ -41,6 +48,19 @@
             {{- end }}
           </ol>
           {{- end }}
+
+          <div class="filter">
+            <button type="button" class="btn btn--primary" data-type="" aria-disabled="true" aria-pressed="true">Alle</button>
+            {{ range first 1 (where .Site.RegularPages "Type" "post") }}
+              <button type="button" class="btn btn--primary" data-type="post" aria-disabled="true" aria-pressed="false">Artikel</button>
+            {{- end }}
+            {{ range first 1 (where .Site.RegularPages "Type" "book") }}
+              <button type="button" class="btn btn--primary" data-type="book" aria-disabled="true" aria-pressed="false">Bücher</button>
+            {{- end }}
+            {{ range first 1 (where .Site.RegularPages "Type" "image") }}
+              <button type="button" class="btn btn--primary" data-type="image" aria-disabled="true" aria-pressed="false">Bilder</button>
+            {{- end }}
+          </div>
         </nav>
       </main>
 

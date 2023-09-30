@@ -82,7 +82,7 @@
     }
 
 
-    & h2 {
+    & .header {
       text-align: center;
 
 
@@ -96,7 +96,7 @@
       margin-block-start: gap(1.5);
     }
 
-    & h3 {
+    & .headline {
       display: flex;
       justify-content: space-between;
 
@@ -147,9 +147,15 @@
       align-items: baseline;
       display: flex;
       flex-direction: row-reverse;
+      transition: opacity 0.3s linear;
+
+      &.hide {
+        opacity: 0.5;
+      }
+
 
       & + li {
-        margin-block-start: 0;
+        margin-block-start: rem(8);
       }
     }
 

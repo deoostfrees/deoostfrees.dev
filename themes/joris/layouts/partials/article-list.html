@@ -5,7 +5,7 @@
   {{- range first 1 ($pages.GroupByDate "2006") }}
   {{- $year := .Key }}
     {{- range first 1 (.GroupByDate "January") }}
-      <h2>Artikel im {{ .Key }}</h2>
+      <h2 class="header">Artikel im {{ .Key }}</h2>
 
       <ol class="monthlist">
         {{- range .ByDate.Reverse }}

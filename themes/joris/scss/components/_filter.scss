@@ -1,0 +1,17 @@
+.filter {
+  background-image: linear-gradient(0deg, var(--color-background-base) 0%, rgba(255 255 255 / 0%) 100%);
+  display: flex;
+  font-size: em(16);
+  gap: rem(12);
+  inset-block-end: 0;
+  justify-content: center;
+  margin-inline: -#{rem(12)};
+  padding-block: gap(1);
+  pointer-events: none;
+  position: sticky;
+
+
+  & .btn {
+    pointer-events: auto;
+  }
+}

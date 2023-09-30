@@ -22,7 +22,7 @@
   }
 
   &--primary {
-    background-color: transparent;
+    background-color: var(--color-background-base);
     border-color: var(--color-link);
     color: var(--color-link);
     padding-inline-end: rem(12);
@@ -35,14 +35,15 @@
 
     &:hover,
     &:focus-visible,
-    &:active {
+    &:active,
+    &[aria-pressed='true'] {
       background-color: var(--color-link);
       color: var(--color-background-base);
     }
   }
 
   &--secondary {
-    background-color: inherit;
+    background-color: transparent;
     border-color: var(--color-link);
     color: var(--color-link);
     padding-inline-end: rem(12);

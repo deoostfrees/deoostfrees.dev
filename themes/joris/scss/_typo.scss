@@ -107,7 +107,7 @@ h4 {
 
 @media screen and (min-width: em(700, 16)) {
 
-  h2 {
+  h2:not(.headline) {
     font-size: em(29);
     line-height: 1.55;
   }
