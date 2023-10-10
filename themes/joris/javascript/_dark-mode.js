@@ -1,7 +1,9 @@
 const BROWSER_WINDOW = window
-const DIALOG_EL = document.getElementById("theme-selector")
+const DIALOG_EL = document.getElementById('theme-selector')
 const DOCUMENT_EL = document.documentElement
 const DARKMODE_TOGGLE = document.querySelector('.btn--dialog-open')
+
+let currentTheme = 'system'
 
 DARKMODE_TOGGLE.removeAttribute('aria-disabled')
 
@@ -34,7 +36,7 @@ DARKMODE_TOGGLE.addEventListener('click', () => {
   DIALOG_EL.showModal()
 })
 
-DIALOG_EL.addEventListener("click", ({ target }) => {
+DIALOG_EL.addEventListener('click', ({ target }) => {
   if (target.matches('dialog')) {
     DIALOG_EL.close()
   }
@@ -44,7 +46,7 @@ DIALOG_EL.querySelector('fieldset.theme').addEventListener('change', (event) => 
   setColorMode(event.target.value)
 })
 
-DIALOG_EL.querySelector('.btn--dialog-close').addEventListener("click", () => {
+DIALOG_EL.querySelector('.btn--dialog-close').addEventListener('click', () => {
   if (localStorage.getItem('color-mode')) {
     currentTheme = localStorage.getItem('color-mode')
   } else {
@@ -56,7 +58,7 @@ DIALOG_EL.querySelector('.btn--dialog-close').addEventListener("click", () => {
   DIALOG_EL.close()
 })
 
-DIALOG_EL.querySelector('.btn--dialog-save').addEventListener("click", function() {
+DIALOG_EL.querySelector('.btn--dialog-save').addEventListener('click', function() {
   currentTheme = DOCUMENT_EL.getAttribute('data-theme')
 
   setColorMode(currentTheme, true)
@@ -71,15 +73,13 @@ DIALOG_EL.querySelector('.btn--dialog-save').addEventListener("click", function(
 const COLOR_QUERY = window.matchMedia('(prefers-color-scheme: dark)')
 
 const prefersColorCheck = () => {
-  let colorMode
-
   if (localStorage.getItem('color-mode')) {
-    colorMode = localStorage.getItem('color-mode')
+    currentTheme = localStorage.getItem('color-mode')
   } else {
-    colorMode = 'system'
+    currentTheme = 'system'
   }
 
-  setColorMode(colorMode, true)
+  setColorMode(currentTheme, true)
 }
 
 prefersColorCheck()
