@@ -7,7 +7,7 @@ draft: false
 rate: 5
 ---
 
-Menschen mit übernatürlichen Fähigkeiten, verstorbene Menschen, die in „Kaltpackungen“ liegen und mit denen noch kommuniziert werden kann sowie ein Attentat, das für eine Gruppe nicht nur zum Zerfall der Wirklichkeit, sondern zum Teil auch sich selbst führt.
+Menschen mit übernatürlichen Fähigkeiten, verstorbene Menschen, die in „Kaltpackungen“ aufbewahrt und weiterhin kontaktiert werden können, sowie ein Attentat, das für eine Gruppe nicht nur zum Zerfall der Wirklichkeit, sondern zum Teil auch sich selbst führt.
 
 {{< image src="/images/ubik-philip-k-dick.jpg" alt="In der rechten Hand halte ich das Buch. Im Hintergrund mein Bücherregal." caption="Ubik - Einbandvorderseite" lazyLoad="eager" >}}
 

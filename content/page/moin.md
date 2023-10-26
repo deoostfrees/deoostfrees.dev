@@ -12,4 +12,4 @@ Ich bin Benjamin. 84er Jahrgang, Minimalist und Frontend Webentwickler mit Fokus
 
 ## Kontakt
 
-Ich bin auf [Mastodon](https://mstdn.social/@deoostfrees), [GitHub](https://github.com/deoostfrees) und einigen anderen Orten im Internet zu finden. Oder [sende mir eine E-Mail](mailto:moin@deoostfrees.com) an moin@deoostfrees.com.
+[Sende mir eine E-Mail](mailto:moin@deoostfrees.com) an moin@deoostfrees.com oder folge mir auf [GitHub](https://github.com/deoostfrees), [CodePen](https://codepen.io/deoostfrees), ~~[Twitter](https://twitter.com/deoostfrees)~~ oder [Mastodon](https://mstdn.social/@deoostfrees).
