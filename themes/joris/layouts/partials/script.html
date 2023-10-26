@@ -1,4 +1,4 @@
-{{ $opts := dict "minify" true "format" "esm" }}
+{{ $opts := dict "format" "esm" "minify" true }}
 {{ $js := resources.Get "js/main.js" | js.Build $opts | fingerprint "sha512" }}
 <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
 <script type="application/ld+json">

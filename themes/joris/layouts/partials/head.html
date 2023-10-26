@@ -55,10 +55,12 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{- end }}
 
-  {{ $opts := dict "minify" true }}
-  {{ $js := resources.Get "js/dark-mode.js" | js.Build $opts | fingerprint "sha512" }}
+  {{ $jsOptions := dict "minify" true "format" "esm" }}
+  {{ $js := resources.Get "js/dark-mode.js" | js.Build $jsOptions | fingerprint "sha512" }}
   <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 
-  {{- $css := resources.Get "css/style.css" | minify | fingerprint "sha512" }}
-  <link href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" rel="stylesheet">
+  {{ $cssOptions := dict "transpiler" "dartsass" "targetPath" "css/style.css" }}
+  {{ with resources.Get "scss/style.scss" | toCSS $cssOptions | minify | fingerprint "sha512" }}
+    <link href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" rel="stylesheet">
+  {{ end }}
 </head>
