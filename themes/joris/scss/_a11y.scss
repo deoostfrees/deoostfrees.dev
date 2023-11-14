@@ -16,9 +16,9 @@
 // Focus
 
 :focus-visible {
-  background-color: var(--color-link);
-  color: var(--color-background-base);
-  outline-color: var(--color-link);
+  background-color: var(--link-color);
+  color: var(--body-background-color);
+  outline-color: var(--link-color);
   outline-offset: rem(4);
   outline-width: rem(2);
   outline-style: solid;

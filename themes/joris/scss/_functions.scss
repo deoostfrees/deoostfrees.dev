@@ -1,18 +1,40 @@
+// Round a number to specified digits
+@function decimal-round($number, $digits: 0) {
+  $n: 1;
+  // $number must be a number
+  @if type-of($number) != number {
+      @warn '#{ $number } is not a number.';
+      @return $number;
+  }
+  // $digits must be a unitless number
+  @if type-of($digits) != number {
+      @warn '#{ $digits } is not a number.';
+      @return $number;
+  } @else if not unitless($digits) {
+      @warn '#{ $digits } has a unit.';
+      @return $number;
+  }
+  @for $i from 1 through $digits {
+      $n: $n * 10;
+  }
+
+  @return math.div(ceil($number * $n), $n);
+}
+
 @function gap($number) {
   @return #{$number * $base-line-height + 'rem'};
 }
 
-// Converts pixel values into percent values
-@function percent($pixels, $base-font-size: $base-font-size) {
-  @return #{math.div(100, $base-font-size) * $pixels + '%'};
-}
-
 // Converts pixel values into em values
 @function em($pixels, $base-font-size: $base-font-size) {
-  @return #{math.div($pixels, $base-font-size) + 'em'};
+  $emResult: math.div($pixels, $base-font-size);
+
+  @return #{decimal-round($emResult, 3) + 'em'};
 }
 
 // Converts pixel values into rem values
 @function rem($pixels, $base-font-size: $base-font-size) {
-  @return #{math.div($pixels, $base-font-size) + 'rem'};
+  $remResult: math.div($pixels, $base-font-size);
+
+  @return #{decimal-round($remResult, 3) + 'rem'};
 }

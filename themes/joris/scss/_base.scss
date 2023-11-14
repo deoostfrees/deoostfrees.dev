@@ -3,13 +3,13 @@
 }
 
 ::selection {
-  background-color: var(--color-focus);
-  color: var(--color-base);
+  background-color: var(--focus-background-color);
+  color: var(--focus-color);
 }
 
 ::target-text {
-  background-color: var(--color-focus);
-  color: var(--color-base);
+  background-color: var(--focus-background-color);
+  color: var(--focus-color);
 }
 
 html {
@@ -24,6 +24,6 @@ html {
 }
 
 body {
-  background-color: var(--color-background-base);
-  color: var(--color-base);
+  background-color: var(--body-background-color);
+  color: var(--body-color);
 }

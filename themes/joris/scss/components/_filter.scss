@@ -1,7 +1,7 @@
 .filter {
-  background-image: linear-gradient(0deg, var(--color-background-base) 0%, rgba(255 255 255 / 0%) 100%);
+  background-image: linear-gradient(0deg, var(--body-background-color) 0%, rgba(255 255 255 / 0%) 100%);
   display: flex;
-  font-size: em(16);
+  font-size: rem(16);
   gap: rem(12);
   inset-block-end: 0;
   justify-content: center;

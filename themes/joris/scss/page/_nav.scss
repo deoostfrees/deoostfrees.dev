@@ -9,7 +9,7 @@
     & h1 {
       font-size: 1rem;
       font-weight: 400;
-      line-height: $base-line-height;
+      line-height: var(--base-line-height);
     }
 
     & ol {
@@ -17,8 +17,7 @@
       display: flex;
       justify-content: flex-end;
       list-style: none;
-      margin-inline-end: -#{rem(6)};
-      margin-inline-start: -#{rem(6)};
+      margin-inline: -#{rem(6)};
 
       @media screen and (min-width: em(700, 16)) {
         gap: gap(0.5);
@@ -57,7 +56,7 @@
     }
 
     & [aria-current] {
-      text-decoration-thickness: rem(2);
+      font-style: italic;
     }
   }
 }
@@ -67,11 +66,10 @@
 
 
   &--article-list {
-    max-inline-size: rem(612);
     inline-size: 100%;
-    margin-inline-end: auto;
-    margin-inline-start: auto;
     margin-block-start: gap(2);
+    margin-inline: auto;
+    max-inline-size: rem(612);
 
     body:not(.archive) & {
       margin-block-start: gap(6);
@@ -118,7 +116,7 @@
       list-style: none;
 
       & [aria-current] {
-        text-decoration-thickness: rem(2);
+        font-style: italic;
       }
     }
 
@@ -160,11 +158,10 @@
     }
 
     .ellipses {
-      border-block-end: rem(1) dotted var(--color-base);
+      border-block-end: rem(1) dotted var(--body-color);
       flex: 1 0 gap(1);
       opacity: 0.8;
-      margin-inline-start: gap(0.5);
-      margin-inline-end: gap(0.5);
+      margin-inline: gap(0.5);
     }
   }
 

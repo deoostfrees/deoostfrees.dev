@@ -4,10 +4,9 @@
 
   & > *:not(figure),
   & figcaption {
-    max-inline-size: rem(612);
     inline-size: 100%;
-    margin-inline-end: auto;
-    margin-inline-start: auto;
+    margin-inline: auto;
+    max-inline-size: rem(612);
   }
 
   & > * + *:not(header) {
@@ -46,15 +45,16 @@
 
   & figure {
     margin-block-start: gap(2);
+    margin-inline: gap(-1);
 
     @media screen and (min-width: em(700, 16)) {
       margin-block-start: gap(2.5);
+      margin-inline: 0;
     }
   }
 
   & img {
-    margin-inline-end: auto;
-    margin-inline-start: auto;
+    margin-inline: auto;
   }
 
   & figure + * {
@@ -66,9 +66,8 @@
   }
 
   & figcaption {
-    font-size: em(16);
-    padding-inline-start: rem(20);
-    padding-inline-end: rem(20);
+    font-size: rem(16);
+    padding-inline: rem(20);
     text-align: center;
   }
 
@@ -81,7 +80,7 @@
   }
 
   & picture {
-    background-color: var(--color-background-dark);
+    background-color: var(--picture-background-color);
     border-radius: rem(2);
     display: block;
     padding: gap(1);
@@ -93,7 +92,7 @@
 
     & img {
       border-radius: rem(2);
-      box-shadow: 0 rem(15) rem(25) var(--color-shadow);
+      box-shadow: 0 rem(15) rem(25) var(--shadow-color);
       inline-size: auto;
       max-block-size: 80svh;
     }

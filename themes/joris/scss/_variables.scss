@@ -17,30 +17,63 @@
    */
   --font-body: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;// 'Iowan Old Style', 'Iowan', 'Garamond', 'Palatino', 'Times New Roman', serif; // -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --font-heading: var(--font-body);
+  --base-font-size: 18;
+  --base-line-height: 1.67;
+
+  /**
+   * Spacing
+   *
+   */
+  --gap: var(--base-line-height);
 
   /**
    * Color scheme
    *
    */
-  --color-base: #444444;
-  --color-focus: #ffff00;
-  --color-link: #0000ff;
+  --black: #000000;
+  --black-1: #1c1917;
+  --black-3: #2b3236;
+  --white: #ffffff;
+  --yellow: #ffff00;
+  --gray: #444444;
+  --gray-6: #e7e5e4;
+  --blue: #0000ff;
 
-  --color-background-base: #ffffff;
-  --color-background-dark: #f7f7f7;
+  // Body
+  --body-background-color: var(--white);
+  --body-color: var(--gray);
 
-  --color-shadow: rgba(100 100 100 / 30%);
+  // Focus
+  --focus-background-color: var(--yellow);
+  --focus-color: var(--gray);
+
+  // Link
+  --link-color: var(--blue);
+
+  // Picture
+  --picture-background-color: color-mix(in srgb, var(--white) 97%, var(--black));
+
+  // Shadow
+  --shadow-color: color-mix(in srgb, var(--gray) 30%, transparent);
 }
 
 @mixin color-scheme-dark {
-  --color-base: #e7e5e4;
-  --color-focus: #2b3236;
-  --color-link: var(--color-base);
+  // Body
+  --body-background-color: var(--black-1);
+  --body-color: var(--gray-6);
 
-  --color-background-base: #1c1917;
-  --color-background-dark: #202020;
+  // Focus
+  --focus-background-color: var(--black-3);
+  --focus-color: var(--gray-6);
 
-  --color-shadow: rgba(0 0 0 / 30%);
+  // Link
+  --link-color: var(--gray-6);
+
+  // Picture
+  --picture-background-color: color-mix(in srgb, var(--black) 14%, var(--black-1));
+
+  // Shadow
+  --shadow-color: color-mix(in srgb, var(--gray) 12%, transparent);
 }
 
 $base-font-size: 18 !default;

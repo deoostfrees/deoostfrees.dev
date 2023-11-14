@@ -9,10 +9,10 @@
 }
 
 dialog {
-  accent-color: var(--color-base);
-  background-color: var(--color-background-base);
+  accent-color: var(--body-color);
+  background-color: var(--body-background-color);
   border: rem(1) solid;
-  color: var(--color-base);
+  color: var(--body-color);
   inset: 0;
   margin: auto;
   max-block-size: calc(100% - #{rem(40)});

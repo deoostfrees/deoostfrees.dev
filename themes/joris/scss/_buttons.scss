@@ -4,13 +4,10 @@
   background-image: none;
   border: rem(1) solid transparent;
   border-radius: rem(4);
-  color: var(--color-link);
+  color: var(--link-color);
   display: inline-block;
   font: inherit;
-  padding-block-start: rem(4);
-  padding-block-end: rem(4);
-  padding-inline-start: rem(4);
-  padding-inline-end: rem(4);
+  padding: rem(4);
   text-align: center;
   text-decoration: none;
 
@@ -22,11 +19,10 @@
   }
 
   &--primary {
-    background-color: var(--color-background-base);
-    border-color: var(--color-link);
-    color: var(--color-link);
-    padding-inline-end: rem(12);
-    padding-inline-start: rem(12);
+    background-color: var(--body-background-color);
+    border-color: var(--link-color);
+    color: var(--link-color);
+    padding-inline: rem(12);
     text-decoration-skip-ink: auto;
     text-decoration-skip: edges;
     text-decoration-thickness: rem(1);
@@ -37,17 +33,16 @@
     &:focus-visible,
     &:active,
     &[aria-pressed='true'] {
-      background-color: var(--color-link);
-      color: var(--color-background-base);
+      background-color: var(--link-color);
+      color: var(--body-background-color);
     }
   }
 
   &--secondary {
     background-color: transparent;
-    border-color: var(--color-link);
-    color: var(--color-link);
-    padding-inline-end: rem(12);
-    padding-inline-start: rem(12);
+    border-color: var(--link-color);
+    color: var(--link-color);
+    padding-inline: rem(12);
     text-decoration-skip-ink: auto;
     text-decoration-skip: edges;
     text-decoration-thickness: rem(1);
@@ -57,17 +52,16 @@
     &:hover,
     &:focus-visible,
     &:active {
-      background-color: var(--color-link);
-      color: var(--color-background-base);
+      background-color: var(--link-color);
+      color: var(--body-background-color);
     }
   }
 
   &--tertiary {
     background-color: inherit;
     border-color: transparent;
-    color: var(--color-link);
-    padding-inline-end: rem(12);
-    padding-inline-start: rem(12);
+    color: var(--link-color);
+    padding-inline: rem(12);
     text-decoration-line: underline;
     text-decoration-skip-ink: auto;
     text-decoration-skip: edges;
@@ -78,8 +72,8 @@
     &:hover,
     &:focus-visible,
     &:active {
-      background-color: var(--color-link);
-      color: var(--color-background-base);
+      background-color: var(--link-color);
+      color: var(--body-background-color);
     }
   }
 }
