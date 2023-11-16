@@ -1,19 +1,13 @@
 .page {
   display: flex;
   flex-direction: column;
-  inline-size: 100%;
-  margin-inline: auto;
-  max-inline-size: rem(1800);
   min-block-size: 100svh;
-  padding: gap(1.5);
+  padding-block: gap(1.5);
 
 
   &__main {
     flex-grow: 1;
-    inline-size: 100%;
     margin-block-start: gap(4);
-    margin-inline: auto;
-    max-inline-size: rem(1200);
 
 
     body:not(.home) & {
@@ -29,7 +23,6 @@
   &__footer {
     flex-grow: 0;
     flex-shrink: 0;
-    inline-size: 100%;
   }
 
   &__footer {
@@ -46,5 +39,37 @@
         margin-block-start: gap(7);
       }
     }
+  }
+}
+
+.grid {
+  // Grid
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--padding-inline), 1fr)
+    [breakout-start] minmax(0, var(--breakout-size))
+    [content-start] min(
+      100% - (var(--padding-inline) * 2),
+      var(--content-max-width)
+    )
+    [content-end]
+    minmax(0, var(--breakout-size)) [breakout-end]
+    minmax(var(--padding-inline), 1fr) [full-end];
+
+
+  & > :not(.grid__breakout, .grid__full),
+  &__full > :not(.grid__breakout, .grid__full) {
+    grid-column: content;
+  }
+
+  &__breakout {
+    grid-column: breakout;
+  }
+
+  &__full {
+    grid-column: full;
+
+    display: grid;
+    grid-template-columns: inherit;
   }
 }

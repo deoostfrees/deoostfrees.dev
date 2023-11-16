@@ -2,13 +2,6 @@
 
 
 
-  & > *:not(figure),
-  & figcaption {
-    inline-size: 100%;
-    margin-inline: auto;
-    max-inline-size: rem(612);
-  }
-
   & > * + *:not(header) {
     margin-block-start: gap(1);
   }
@@ -67,7 +60,6 @@
 
   & figcaption {
     font-size: rem(16);
-    padding-inline: rem(20);
     text-align: center;
   }
 

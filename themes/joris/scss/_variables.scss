@@ -1,4 +1,16 @@
 :root {
+  --base-font-size: 18;
+  --base-line-height: 1.67;
+
+  // Content width
+  --padding-inline: calc((40 / var(--base-font-size)) * 1rem);
+  --content-max-width: calc((612 / var(--base-font-size)) * 1rem);
+  --breakout-max-width: calc((1200 / var(--base-font-size)) * 1rem);
+
+  --breakout-size: calc(
+    (var(--breakout-max-width) - var(--content-max-width)) / 2
+  );
+
   /**
    * Breakpoints
    *
@@ -17,8 +29,6 @@
    */
   --font-body: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;// 'Iowan Old Style', 'Iowan', 'Garamond', 'Palatino', 'Times New Roman', serif; // -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --font-heading: var(--font-body);
-  --base-font-size: 18;
-  --base-line-height: 1.67;
 
   /**
    * Spacing

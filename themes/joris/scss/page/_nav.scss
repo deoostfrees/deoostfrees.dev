@@ -17,7 +17,6 @@
       display: flex;
       justify-content: flex-end;
       list-style: none;
-      margin-inline: -#{rem(6)};
 
       @media screen and (min-width: em(700, 16)) {
         gap: gap(0.5);
@@ -66,10 +65,7 @@
 
 
   &--article-list {
-    inline-size: 100%;
     margin-block-start: gap(2);
-    margin-inline: auto;
-    max-inline-size: rem(612);
 
     body:not(.archive) & {
       margin-block-start: gap(6);

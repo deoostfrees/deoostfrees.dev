@@ -17,7 +17,7 @@
 {{ $medium := .Scratch.Get "medium" }}
 {{ $large := .Scratch.Get "large" }}
 
-<figure>
+<figure class="grid__breakout">
   <picture>
   {{ with .Get "sizes" }}sizes='{{.}}'
     {{ else }}
