@@ -1,0 +1,49 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{- if .IsHome }}
+  <title>{{ .Site.Title | safeHTML }}</title>
+  {{- else }}
+  <title>{{ .Title | safeHTML }} - {{ .Site.Title | safeHTML }}</title>
+  {{- end }}
+
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
+
+  <meta name="robots" content="index, follow">
+
+  <link href="/favicon.ico" sizes="48x48" rel="icon">
+  <link href="/favicon.svg" sizes="any" type="image/svg+xml" rel="icon">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/manifest.webmanifest" rel="manifest">
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F1F3F8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#CCCCCC" />
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="de Oostfrees">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="de Oostfrees">
+
+  <link rel="me" href="https://mstdn.social/@deoostfrees" />
+
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="website">
+
+  <meta property="og:title" content="{{if .IsHome }}{{ .Site.Title | safeHTML }}{{ else }}{{ .Title | safeHTML }} | {{ .Site.Title | safeHTML }}{{ end }}">
+  <meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+  <meta property="og:image" content="images/share-image.jpg">
+  <meta property="og:image:alt" content="Screenshot van de website">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{- with .OutputFormats.Get "rss" }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{- end }}
+
+  <!-- JavaScript to avoid FART (Flash of inAccurate coloR Theme) -->
+  <script src="/assets/js/helpers/set-color-scheme.js"></script>
+  <link href="/assets/css/main.css?{{ now.Unix }}" rel="stylesheet">
+</head>

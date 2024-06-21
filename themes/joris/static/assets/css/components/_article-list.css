@@ -1,0 +1,101 @@
+.article-list {
+  grid-column: content;
+  margin-block-start: 2rlh;
+
+  body:not(.archive) & {
+    margin-block-start: 6rlh;
+  }
+
+
+  & + & {
+    margin-block-start: 1.5rlh;
+  }
+
+  & .headline {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:first-of-type) {
+      justify-content: flex-end;
+
+
+      & > .year {
+        display: none;
+      }
+    }
+
+    & + * {
+      margin-block-start: 0.75rlh;
+    }
+  }
+
+  & ol {
+    list-style: none;
+
+    & [aria-current] {
+      font-weight: 700;
+    }
+  }
+
+  & > ol {
+
+
+    & + ol {
+      margin-block-start: 1rlh;
+    }
+
+    & > li {
+
+
+      & + li {
+        margin-block-start: 1rlh;
+
+
+        & .year {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  & .monthlist li {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row-reverse;
+    transition: opacity 0.3s linear;
+
+    &.hide {
+      opacity: 0.5;
+    }
+
+
+    & + li {
+      margin-block-start: calc((8 / var(--base-font-size)) * 1rem);
+    }
+  }
+
+  .home & .monthlist a:first-of-type {
+    font-style: italic;
+  }
+
+  .ellipses {
+    border-block-end: calc((1 / var(--base-font-size)) * 1rem) dotted var(--body-color);
+    flex: 1 0 1rlh;
+    opacity: 0.8;
+    margin-inline: 0.5rlh;
+  }
+}
+
+& .article-list__header {
+  text-align: center;
+
+
+  & + * {
+    margin-block-start: 1rlh;
+  }
+}
+
+.article-list__more {
+  margin-block-start: 1.5lh;
+  text-align: center;
+}

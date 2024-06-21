@@ -1,0 +1,29 @@
+:root {
+  /**
+   * Spacing
+   *
+   */
+  --scroll-padding-top: 2rlh;
+  --scroll-padding-bottom: 0;
+
+  --base-font-size: 18;
+  --base-line-height: 1.722;
+
+  --font-body: 'Nimbus Mono PS', 'Courier New', monospace;
+  --font-heading: var(--font-body);
+
+  --padding-inline: 1rlh;
+  --content-max-width: calc((612 / var(--base-font-size)) * 1rem);
+  --breakout-max-width: calc((1800 / var(--base-font-size)) * 1rem);
+
+  --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+  /**
+   * Layout
+   *
+   */
+
+   /* Grid */
+   --grid-gutter-vertical: calc((24 / 18) * 1rem);
+   --grid-gutter-horizontal: calc((24 / 18) * 1rem);
+}

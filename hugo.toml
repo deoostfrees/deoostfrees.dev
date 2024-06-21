@@ -1,0 +1,74 @@
+baseURL = "https://deoostfrees.dev"
+DefaultContentLanguage = "de"
+disableHugoGeneratorInject = true
+disableKinds = ["robotsTXT", "section", "taxonomy", "term"]
+languageCode = "de"
+theme = "joris"
+title = "Benjamin de Oostfrees"
+rssLimit = 10
+
+[outputs]
+  home = [
+    "HTML",
+    "RSS"
+  ]
+  page = [
+    "HTML"
+  ]
+
+[permalinks]
+  page = "/:slug/"
+  post = "/blog/:slug/"
+  book = "/blog/:slug/"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[params]
+  description = "Frontend Webentwickler (Barrierefreiheit, Performanz, HTML, CSS, JavaScript), Minimalist, AFOL (Adult fan of LEGO®)."
+
+[menu]
+  [[menu.main]]
+    name = "Moin"
+    url = "https://deoostfrees.dev/moin/"
+    weight = -300
+  [[menu.main]]
+    name = "Wat ik maak"
+    url = "https://deoostfrees.dev/wat-ik-maak/"
+    weight = -200
+  [[menu.main]]
+    name = "Projekte"
+    url = "https://deoostfrees.dev/projekte/"
+    pre = "<sup>3</sup>"
+    weight = -100
+  [[menu.main]]
+    name = "Blog"
+    url = "https://deoostfrees.dev/blog/"
+    weight = -50
+  [[menu.footer]]
+    name = "Nu"
+    url = "https://deoostfrees.dev/nu/"
+    weight = -500
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = false
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+      wrapStandAloneImageWithinParagraph = false
+
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xHTML = false

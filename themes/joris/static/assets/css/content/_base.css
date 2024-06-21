@@ -1,0 +1,53 @@
+::selection {
+  background-color: var(--focus-background-color);
+  color: var(--focus-color);
+}
+
+::target-text {
+  background-color: var(--focus-background-color);
+  color: var(--focus-color);
+}
+
+html {
+  background-color: var(--html-background-color);
+  color: var(--html-color);
+  scrollbar-gutter: stable;
+  scroll-padding-block: var(--scroll-padding-top) var(--scroll-padding-bottom);
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--body-background-color);
+  color: var(--body-color);
+}
+
+:focus-visible {
+  outline-color: var(--link-color);
+  outline-offset: calc((4 / var(--base-font-size)) * 1rem);
+  outline-style: solid;
+  outline-width: calc((2 / var(--base-font-size)) * 1rem);
+}
+
+.skip-link {
+
+
+
+  &:focus {
+    inset-block-start: 1rlh;
+    inset-inline-start: 1rlh;
+    position: absolute;
+    z-index: 1337;
+  }
+
+  &:not(:focus) {
+    block-size: calc((1 / var(--base-font-size)) * 1rem);
+    clip-path: inset(50%);
+    inline-size: calc((1 / var(--base-font-size)) * 1rem);
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+}

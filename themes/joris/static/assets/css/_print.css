@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  background-color: white;
+  box-shadow: none;
+  color: black;
+  text-shadow: none;
+}
+
+a {
+  text-decoration: none;
+
+  &::after {
+    content: ' ('attr(href)')';
+  }
+}

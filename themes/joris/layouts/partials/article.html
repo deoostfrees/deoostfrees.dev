@@ -1,0 +1,19 @@
+<article class="article article--{{ .Type }}">
+  <header class="article__header">
+    {{- if not (eq .Type "page") }}
+    <p>
+      <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "2" }}. {{ i18n (.Date.Format "January") }} {{ .Date.Format "2006" }}</time>
+    </p>
+    {{- end }}
+
+    <h1>{{ .Title | safeHTML }}</h1>
+  </header>
+
+  {{- partial "headline-hash" . -}}
+
+  {{- if eq .Type "book" }}
+    {{- if .Params.rate }}
+      {{- partial "rate" . -}}
+    {{- end }}
+  {{- end }}
+</article>

@@ -1,0 +1,43 @@
+:root:not([data-color-scheme='dark']) {
+  color-scheme: light;
+
+  --html-background-color: var(--blue-grey);
+  --html-color: var(--black);
+  --body-background-color: var(--white);
+  --body-color: var(--black);
+  --focus-background-color: var(--yellow);
+  --focus-color: var(--black);
+
+  --link-background-color: transparent;
+  --link-color: var(--blue);
+
+  --picture-background-color: var(--blue-grey);
+  --shadow-color: color-mix(in srgb, var(--gray) 30%, transparent);
+
+  /**
+   * Buttons
+   *
+   */
+  --button-background-color: transparent;
+  --button-border-color: transparent;
+  --button-color: var(--link-color);
+  --button-hover-background-color: transparent;
+  --button-hover-border-color: transparent;
+  --button-hover-color: var(--link-color);
+
+  /* Primary */
+  --button-primary-background-color: var(--link-color);
+  --button-primary-border-color: var(--link-color);
+  --button-primary-color: var(--white);
+  --button-primary-hover-background-color: var(--link-color);
+  --button-primary-hover-border-color: var(--link-color);
+  --button-primary-hover-color: var(--white);
+
+  /* Sidebar */
+  --sidebar-header-background-color: var(--blue-grey);
+  --sidebar-header-color: var(--black);
+
+  /* Page footer */
+  --page-footer-background-color: var(--blue-grey);
+  --page-footer-color: var(--black);
+}

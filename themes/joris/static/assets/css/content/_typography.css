@@ -1,0 +1,53 @@
+html {
+  font-family: var(--font-body);
+  font-size: 112.5%;
+  line-height: var(--base-line-height);
+
+  @media screen and (width >= 2000px) {
+    font-size: 125%;
+  }
+}
+
+a {
+  background-color: var(--link-background-color);
+  color: var(--link-color);
+  text-decoration-line: underline;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: calc((1 / var(--base-font-size)) * 1rem);
+  text-underline-offset: calc((3 / var(--base-font-size)) * 1rem);
+
+
+  &.heading-permalink {
+    text-decoration: none;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: calc((37 / var(--base-font-size)) * 1rem);
+  line-height: calc(58 / 37);
+}
+
+h2,
+.h2 {
+  font-size: calc((29 / 18) * 1rem);
+  line-height: calc((47 / 29));
+}
+
+@supports (hyphenate-limit-chars: 10 3 4) {
+  p {
+    hyphens: auto;
+    hyphenate-limit-chars: 10 3 4;
+  }
+}

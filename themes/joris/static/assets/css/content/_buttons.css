@@ -1,0 +1,50 @@
+.btn {
+  appearance: none;
+  background-color: var(--button-background-color);
+  background-image: none;
+  border-radius: 0;
+  border: calc((1 / var(--base-font-size)) * 1rem) solid var(--button-border-color);
+  color: var(--button-color);
+  display: flex;
+  font: inherit;
+  inline-size: fit-content;
+
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--button-hover-background-color);
+    border-color: var(--button-hover-border-color);
+    color: var(--button-hover-color);
+  }
+}
+
+/**
+ * Primary Button
+ *
+ */
+.btn--primary {
+  background-color: var(--button-primary-background-color);
+  border-color: var(--button-primary-border-color);
+  border-radius: 0;
+  color: var(--button-primary-color);
+  padding-block: calc((2 / var(--base-font-size)) * 1rem);
+  padding-inline: calc((8 / var(--base-font-size)) * 1rem);
+
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--button-primary-hover-background-color);
+    border-color: var(--button-primary-hover-border-color);
+    color: var(--button-primary-hover-color);
+  }
+}
+
+/**
+ * Button with icon
+ *
+ */
+.btn--icon {
+  align-items: center;
+  column-gap: calc((8 / 18) * 1rem);
+  display: inline-flex;
+}

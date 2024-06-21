@@ -1,0 +1,19 @@
+name: Broken page
+description: A page or blog post is broken.
+title: 'Broken page: [Page title]'
+labels: bug
+body:
+  - type: input
+    id: url
+    attributes:
+      label: "Page URL:"
+      description: URL of the broken page
+      placeholder: ex. https://deoostfrees.dev/moin/
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Description of the issue(s)
+    validations:
+      required: true

@@ -1,0 +1,30 @@
+{{- $currentPage := . }}
+
+{{- $pages := where .Site.RegularPages "Type" "!=" "page" }}
+<nav class="article-list" aria-label="Artikel">
+  {{- range first 1 ($pages.GroupByDate "2006") }}
+  {{- $year := .Key }}
+    {{- range first 1 (.GroupByDate "January") }}
+      <h2 class="article-list__header">Artikel im {{ i18n .Key }}</h2>
+
+      <ol class="monthlist">
+        {{- range .ByDate.Reverse }}
+        <li>
+          <span>{{ .Date.Format "2" }}.</span>
+          <span class="ellipses"></span>
+
+          {{- if eq $currentPage.Permalink .Permalink }}
+          <a aria-current="page" href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+          {{- else }}
+          <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+          {{- end }}
+        </li>
+        {{- end }}
+      </ol>
+    {{- end }}
+  {{- end }}
+
+  <div class="article-list__more">
+    <a href="/blog/">All Artikel</a>
+  </div>
+</nav>

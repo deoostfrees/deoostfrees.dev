@@ -1,0 +1,19 @@
+:root {
+  --black: #2d2723;
+  --black-1: #1C1917;
+  --gray: #404040;
+  --gray-1: #CCCCCC;
+  --blue-grey: #F1F3F8;
+  --white: #FFFFFF;
+  --yellow: #FFF7B1;
+  --lila: #551A8B;
+  --blue: #0000EE;
+
+  &[data-color-scheme='hell'] {
+    color-scheme: light;
+  }
+
+  &[data-color-scheme='dunkel'] {
+    color-scheme: dark;
+  }
+}

@@ -1,0 +1,19 @@
+.theme-switcher {
+  column-gap: calc((16 / var(--base-font-size)) * 1rem);
+  display: flex;
+  inline-size: fit-content;
+
+  /* Hide if scripting is disabled */
+  @media (scripting: none) {
+    display: none;
+  }
+
+
+  & [data-color-scheme] {
+    padding: calc((2 / var(--base-font-size)) * 1rem);
+  }
+
+  & [aria-pressed='true'] {
+    border-block-end: calc((1 / var(--base-font-size)) * 1rem) solid;
+  }
+}

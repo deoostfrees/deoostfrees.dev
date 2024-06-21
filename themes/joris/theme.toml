@@ -1,0 +1,15 @@
+name = "Joris"
+license = ""
+licenselink = ""
+description = ""
+
+homepage = ""
+
+demosite = "https://deoostfrees.dev"
+
+tags = ["blog", "minimal"]
+features = []
+
+[author]
+  name = "Benjamin de Oostfrees"
+  homepage = "https://deoostfrees.dev"

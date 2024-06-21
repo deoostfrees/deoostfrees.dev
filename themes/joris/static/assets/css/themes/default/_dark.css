@@ -1,0 +1,43 @@
+:root:not([data-color-scheme='light']) {
+  color-scheme: dark;
+
+  --html-background-color: var(--gray-1);
+  --html-color: var(--black);
+  --body-background-color: var(--black-1);
+  --body-color: var(--gray-1);
+  --focus-background-color: var(--white);
+  --focus-color: var(--black-1);
+
+  --link-background-color: transparent;
+  --link-color: var(--white);
+
+  --picture-background-color: color-mix(in srgb, var(--gray) 12%, transparent);
+  --shadow-color: color-mix(in srgb, var(--gray) 12%, transparent);
+
+  /**
+   * Buttons
+   *
+   */
+  --button-background-color: transparent;
+  --button-border-color: transparent;
+  --button-color: var(--link-color);
+  --button-hover-background-color: transparent;
+  --button-hover-border-color: transparent;
+  --button-hover-color: var(--link-color);
+
+  /* Primary */
+  --button-primary-background-color: var(--link-color);
+  --button-primary-border-color: var(--link-color);
+  --button-primary-color: var(--black-1);
+  --button-primary-hover-background-color: var(--link-color);
+  --button-primary-hover-border-color: var(--link-color);
+  --button-primary-hover-color: var(--black-1);
+
+  /* Sidebar */
+  --sidebar-header-background-color: var(--gray-1);
+  --sidebar-header-color: var(--black-1);
+
+  /* Page footer */
+  --page-footer-background-color: var(--gray-1);
+  --page-footer-color: var(--black-1);
+}

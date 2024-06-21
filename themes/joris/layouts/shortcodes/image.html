@@ -1,0 +1,56 @@
+{{- $src := resources.GetMatch (.Get "src") -}}
+{{- $alt := .Get "alt" -}}
+{{- $caption := .Get "caption" -}}
+{{- $lazyLoad := .Get "lazyLoad" -}}
+
+{{- /* $src := $src | images.Filter (images.Grayscale) */ -}}
+
+{{ $smallw := default "500x webp" }}
+{{ $mediumw := default "700x webp" }}
+{{ $largew := default "1200x webp" }}
+
+{{ .Scratch.Set "small" ($src.Resize $smallw) }}
+{{ .Scratch.Set "medium" ($src.Resize $mediumw) }}
+{{ .Scratch.Set "large" ($src.Resize $largew) }}
+
+{{ $small := .Scratch.Get "small" }}
+{{ $medium := .Scratch.Get "medium" }}
+{{ $large := .Scratch.Get "large" }}
+
+<figure>
+  <picture>
+  {{ with .Get "sizes" }}sizes='{{.}}'
+    {{ else }}
+
+    {{ if ge $src.Width "1200" }}
+      {{ with $large.RelPermalink }}
+      <source media="(min-width: 43.75em)" srcset="{{.}}" type="image/webp">
+      {{ end }}
+    {{ end }}
+
+    {{ if ge $src.Width "700" }}
+      {{ with $medium.RelPermalink }}
+      <source media="(min-width: 31.25em)" srcset="{{.}}" type="image/webp">
+      {{ end }}
+    {{ end }}
+
+    {{ if ge $src.Width "500" }}
+      {{ with $small.RelPermalink }}
+      <source srcset="{{.}}" type="image/webp">
+      {{ end }}
+    {{ end }}
+
+    {{ if ge $src.Width "1200" }}
+      <img src="{{ $large.RelPermalink }}" loading="{{ $lazyLoad }}"{{ if eq $lazyLoad "lazy" }} decoding="async"{{ end }}{{ if eq $lazyLoad "eager" }} fetchpriority="high"{{ end }} alt="{{ $alt }}" width="{{ $large.Width }}" height="{{ $large.Height }}">
+    {{ else }}
+      <img src="{{ $src.RelPermalink }}" loading="{{ $lazyLoad }}"{{ if eq $lazyLoad "lazy" }} decoding="async"{{ end }}{{ if eq $lazyLoad "eager" }} fetchpriority="high"{{ end }} alt="{{ $alt }}" width="{{ $src.Width }}" height="{{ $src.Height }}">
+    {{ end }}
+  {{ end }}
+  </picture>
+
+  {{ with $caption }}
+  <figcaption>
+    {{ . }}
+  </figcaption>
+  {{ end }}
+</figure>
