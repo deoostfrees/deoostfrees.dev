@@ -139,3 +139,37 @@
   position: absolute;
   transform: scaleX(-1);
 }
+
+.superpower {
+  background-color: #FF78FB;
+  color: var(--black);
+  padding-inline: calc((2 / var(--base-font-size)) * 1rem);
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    animation: superpower 0.5s linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes superpower {
+  0% {
+    background-color: #FF7878;
+  }
+
+  25% {
+    background-color: #9FFF78;
+  }
+
+  50% {
+    background-color: #78A8FF;
+  }
+
+  75% {
+    background-color: #FF78FB;
+  }
+
+  100% {
+    background-color: #FFFBE9;
+  }
+}
+
