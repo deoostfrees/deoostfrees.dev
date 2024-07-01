@@ -2,10 +2,6 @@ html {
   font-family: var(--font-body);
   font-size: 112.5%;
   line-height: var(--base-line-height);
-
-  @media screen and (width >= 2000px) {
-    font-size: 125%;
-  }
 }
 
 a {
@@ -14,7 +10,7 @@ a {
   text-decoration-line: underline;
   text-decoration-skip-ink: auto;
   text-decoration-thickness: calc((1 / var(--base-font-size)) * 1rem);
-  text-underline-offset: calc((3 / var(--base-font-size)) * 1rem);
+  text-underline-offset: calc((2 / var(--base-font-size)) * 1rem);
 
 
   &.heading-permalink {
@@ -41,8 +37,8 @@ h1 {
 
 h2,
 .h2 {
-  font-size: calc((29 / 18) * 1rem);
-  line-height: calc((47 / 29));
+  font-size: calc((29 / var(--base-font-size)) * 1rem);
+  line-height: calc((46 / 29));
 }
 
 @supports (hyphenate-limit-chars: 10 3 4) {
@@ -50,4 +46,25 @@ h2,
     hyphens: auto;
     hyphenate-limit-chars: 10 3 4;
   }
+}
+
+small {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+}
+
+sub,
+sup {
+  font-size: var(--small-font-size);
+  position: relative;
+  user-select: none;
+  vertical-align: unset;
+}
+
+sub {
+  inset-block-end: calc((8 / var(--base-font-size)) * -1rem);
+}
+
+sup {
+  inset-block-start: calc((8 / var(--base-font-size)) * -1rem);
 }

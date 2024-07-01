@@ -24,6 +24,10 @@ body {
   color: var(--body-color);
 }
 
+hr {
+  border-block-start: calc((1 / var(--base-font-size)) * 1rem) solid color-mix(in srgb, var(--body-color), transparent 84%);
+}
+
 :focus-visible {
   outline-color: var(--link-color);
   outline-offset: calc((4 / var(--base-font-size)) * 1rem);

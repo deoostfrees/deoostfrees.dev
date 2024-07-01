@@ -7,10 +7,14 @@
   --scroll-padding-bottom: 0;
 
   --base-font-size: 18;
-  --base-line-height: 1.722;
+  --base-line-height: calc((30 / var(--base-font-size)));
 
-  --font-body: 'Nimbus Mono PS', 'Courier New', monospace;
+  --font-body: system-ui, sans-serif;
   --font-heading: var(--font-body);
+
+  /* small */
+  --small-font-size: calc((16 / var(--base-font-size)) * 1rem);
+  --small-line-height: calc((27 / 16));
 
   --padding-inline: 1rlh;
   --content-max-width: calc((612 / var(--base-font-size)) * 1rem);
@@ -24,6 +28,6 @@
    */
 
    /* Grid */
-   --grid-gutter-vertical: calc((24 / 18) * 1rem);
-   --grid-gutter-horizontal: calc((24 / 18) * 1rem);
+   --grid-gutter-vertical: calc((24 / var(--base-font-size)) * 1rem);
+   --grid-gutter-horizontal: calc((24 / var(--base-font-size)) * 1rem);
 }

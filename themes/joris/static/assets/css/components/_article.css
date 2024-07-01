@@ -21,7 +21,7 @@
     }
   }
 
-  & li {
+  & ul li {
 
 
 
@@ -70,7 +70,6 @@
 
   & figcaption {
     font-size: calc((16 / var(--base-font-size)) * 1rem);
-    font-style: italic;
     text-align: center;
 
 
@@ -84,6 +83,21 @@
   }
 }
 
+.article__header {
+
+
+
+  & p {
+    font-size: var(--small-font-size);
+    line-height: var(--small-line-height);
+  }
+}
+
 .article__aside {
   margin-block-start: 2rlh;
+}
+
+.footnotes ol {
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
 }

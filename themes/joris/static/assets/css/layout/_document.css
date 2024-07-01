@@ -3,12 +3,12 @@
   box-shadow: 0 calc((4 / var(--base-font-size)) * 1rem) calc((8 / var(--base-font-size)) * 1rem) 0 rgba(0 0 0 / 5%);
   color: var(--body-color);
   min-block-size: 100svh;
-  padding-block: 1rlh 4rlh;
+  padding-block: 1rlh;
   position: relative;
   z-index: 1;
 
   @media screen and (width >= 1200px) {
-    padding-block-end: 5rlh;
+    padding-block-end: 6rlh;
   }
 }
 
@@ -29,27 +29,12 @@
   grid-column: content;
   justify-self: end;
   margin-block-start: 4rlh;
+  min-inline-size: calc((112 / var(--base-font-size)) * 1rem);
   transform: rotate(-2deg);
 
   @media screen and (width >= 1200px) {
     grid-area: content-end / content-end / breakout-end / breakout-end;
     margin-block-start: 0;
-  }
-
-  & h2 {
-
-
-
-    & span {
-      background-color: var(--sidebar-header-background-color);
-      box-decoration-break: clone;
-      color: var(--sidebar-header-color);
-      padding-inline: calc((16 / var(--base-font-size)) * 1rem);
-    }
-  }
-
-  & ul {
-    margin-block-start: 1.5rlh;
   }
 
   & li {
@@ -75,6 +60,7 @@
 
 .page__footer {
   --link-color: currentcolor;
+  --link-hover-color: currentcolor;
 
   background-color: var(--page-footer-background-color);
   content-visibility: auto;
@@ -89,8 +75,11 @@
   }
 
   & ul {
-    column-gap: calc((16 / var(--base-font-size)) * 1rem);
+    align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    gap: calc((16 / var(--base-font-size)) * 1rem);
+    justify-content: center;
     list-style: none;
 
 
@@ -137,7 +126,7 @@
   inset-block-end: 0;
   justify-self: end;
   position: absolute;
-  transform: scaleX(-1);
+  transform: rotate(-4deg) scaleX(-1);
 }
 
 .superpower {
@@ -172,4 +161,3 @@
     background-color: #FFFBE9;
   }
 }
-

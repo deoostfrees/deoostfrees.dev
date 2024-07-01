@@ -45,6 +45,6 @@
  */
 .btn--icon {
   align-items: center;
-  column-gap: calc((8 / 18) * 1rem);
+  column-gap: calc((8 / var(--base-font-size)) * 1rem);
   display: inline-flex;
 }

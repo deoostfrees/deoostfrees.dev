@@ -28,6 +28,10 @@ img {
   max-inline-size: 100%;
 }
 
+hr {
+  border: 0;
+}
+
 h1,
 h2,
 h3,
